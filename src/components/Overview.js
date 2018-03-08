@@ -19,8 +19,10 @@ class Overview extends Component {
   render() {
     return (
       <div className="overview">
-        <h1 className="about"> Julian Fsd is a type and graphic designer based in Hamburg Germany. He designs books and publications, typefaces, visual identities, websites and exhibitions for cultural institutions, businesses and individuals. Together with Max Prediger he is JMMP. They are art directors for the London and New York based publisher Montez Press and part of the studio space Open Office in Hamburg. Julian studied at HAW and HFBK Hamburg and holds a Master of fine Arts specializing in typography and type design.</h1>
-        <div className="fontstyles-overview">
+        <div className="container">
+          <h1 className="about">Repro ist eine Groteskschrift mit der DNA einer Monotype. Fünf weitere Schriftschnitte sind Reproduktionen dessen. Sie sind ein Produkt eines Algorithmus, welcher die Outlines auf ein darunter liegendes Raster verschiebt. Das Raster wird von Schnitt zu Schnitt gröber, bis das Ergebnis nur noch Form ist.</h1>
+        </div>
+        <div className="container fontstyles-overview">
           <Link className="fontstyle-card" to="/null">
             <div className="fontstyle-card-letter repro-Null">{this.props.fontstyles[0].activeLetter}</div>
           </Link>
