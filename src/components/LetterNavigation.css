@@ -1,0 +1,39 @@
+
+.slide-navigation-mobile {
+  background-color: #F9F9F9;
+}
+
+.slide-navigation-container {
+  background-color: #F9F9F9;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 4px 0;
+  border-top: 1px solid #B2B2B2;
+}
+
+.slide-navigation-mobile .flickity-slider{
+  cursor: default;
+}
+
+.slide-navigation-item-mobile {
+  width: 25px;
+  height: 40px;
+  margin-right: 4px;
+  background-color: #F9F9F9;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: grey;
+}
+
+.slide-navigation-item-mobile.is-focused{
+  color: black;
+}
+
+.slide-navigation-content {
+  margin: auto;
+  font-size: 24px
+}

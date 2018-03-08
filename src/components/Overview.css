@@ -1,0 +1,24 @@
+.about{
+  text-align: left;
+  font-family: reproNull;
+  color: white;
+}
+
+.overview {
+  padding: 25px;
+}
+
+.fontstyle-card {
+  display: block;
+  height: 400px;
+  width: 40%;
+  background-color: white;
+  margin: 24px;
+  text-decoration: none;
+  color: black;
+}
+
+.fontstyle-card-letter {
+  font-size: 300px;
+  line-height: 1;
+}
