@@ -19,7 +19,7 @@ class Overview extends Component {
   render() {
     return (
       <div className="overview">
-        <h1 className="about"> Julian Mader is a type and graphic designer based in Hamburg Germany. He designs books and publications, typefaces, visual identities, websites and exhibitions for cultural institutions, businesses and individuals. Together with Max Prediger he is JMMP. They are art directors for the London and New York based publisher Montez Press and part of the studio space Open Office in Hamburg. Julian studied at HAW and HFBK Hamburg and holds a Master of fine Arts specializing in typography and type design.</h1>
+        <h1 className="about"> Julian Fsd is a type and graphic designer based in Hamburg Germany. He designs books and publications, typefaces, visual identities, websites and exhibitions for cultural institutions, businesses and individuals. Together with Max Prediger he is JMMP. They are art directors for the London and New York based publisher Montez Press and part of the studio space Open Office in Hamburg. Julian studied at HAW and HFBK Hamburg and holds a Master of fine Arts specializing in typography and type design.</h1>
         <div className="fontstyles-overview">
           <Link className="fontstyle-card" to="/null">
             <div className="fontstyle-card-letter repro-Null">{this.props.fontstyles[0].activeLetter}</div>
