@@ -24,6 +24,8 @@ class LetterNavigation extends Component {
       contain: false
     });
 
+    this.updateFocused(this.props.fontstyle.activeLetterIndex);
+
     this.flkty.on( 'dragEnd', ()=> {
       this.updateHistory(this.flkty.selectedIndex );
       this.updateFocused( this.flkty.selectedIndex );
