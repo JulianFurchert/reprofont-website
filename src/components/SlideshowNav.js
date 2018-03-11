@@ -27,9 +27,16 @@ class LetterNavigation extends Component {
     this.updateFocused(this.props.fontstyle.activeLetterIndex);
 
     this.flkty.on( 'dragEnd', ()=> {
-      this.updateHistory(this.flkty.selectedIndex );
+      this.updateHistory( this.flkty.selectedIndex );
       this.updateFocused( this.flkty.selectedIndex );
     });
+
+    this.flkty.on( 'staticClick', (event, pointer, cellElement, cellIndex) => {
+      if ( cellElement ) {
+        this.updateHistory( cellIndex );
+        this.updateFocused( cellIndex );
+      }
+    })
 
     this.flkty.on( 'scroll', (progress)=> {
       if(this.flkty.isDragging){
@@ -68,7 +75,7 @@ class LetterNavigation extends Component {
   renderLetters() {
     return _.map(this.props.fontstyle.letters, letter => {
       return (
-        <div className='slide-navigation-item-mobile'>
+        <div key={letter} className='slide-navigation-item-mobile'>
           <div className='slide-navigation-content'>{letter}</div>
         </div>
       );

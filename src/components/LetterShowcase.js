@@ -9,9 +9,9 @@ import './LetterShowcase.css';
 
 class LetterShowcase extends Component {
 
-  renderInformation(fontstyle) {
+  renderInformation({ name, activeLetterIndex, letters }) {
     return (
-      <div className="information">Repro {fontstyle.name} - { ( '0' + (fontstyle.activeLetterIndex+1) ).slice(-2) }/{ fontstyle.letters.length }</div>
+      <div className="information">Repro {name} - { ( '0' + (activeLetterIndex+1) ).slice(-2) }/{ letters.length }</div>
     )
   }
 

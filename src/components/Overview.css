@@ -18,7 +18,7 @@
   margin: 0 -16px;
 }
 
-.fontstyle-card {
+.card {
   display: inline-block;
   flex: 0 0 100%;
   height: 400px;
@@ -29,24 +29,37 @@
   color: black;
 }
 
-.fontstyle-card-letter {
-  font-size: 300px;
-  line-height: 1;
+.card-body {
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: white;
   border-radius: 8px;
 }
 
+.card-information {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: 'Fira Mono', monospace;
+}
+
+.card-letter {
+  font-size: 300px;
+  line-height: 1;
+  width: 100%;
+  height: 100%;
+}
+
 
 @media (min-width: 576px) {
-  .fontstyle-card  {
+  .card  {
     flex: 0 0 50%;
   }
 }
 
 @media (min-width: 768px){
-  .fontstyle-card  {
+  .card  {
     flex: 0 0 33%;
   }
   .about  {

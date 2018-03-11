@@ -34,7 +34,7 @@ class Letter extends Component {
   renderLetters() {
     return _.map(this.props.fontstyle.letters, letter => {
       return (
-        <div className='slideshow-item'>
+        <div key={letter} className='slideshow-item'>
           <div className={this.props.fontstyle.className + ' slideshow-content'}>{letter}</div>
         </div>
       );

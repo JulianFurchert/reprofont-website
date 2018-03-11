@@ -20,6 +20,8 @@ class App extends Component {
          <Route exact path='/200' render={() => (<LetterShowcase id={2}/>)}/>
          <Route exact path='/300' render={() => (<LetterShowcase id={3}/>)}/>
          <Route exact path='/400' render={() => (<LetterShowcase id={4}/>)}/>
+         <Route exact path='/500' render={() => (<LetterShowcase id={5}/>)}/>
+         <Route exact path='/600' render={() => (<LetterShowcase id={6}/>)}/>
       </div>
     );
   }

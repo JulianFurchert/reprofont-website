@@ -1,3 +1,4 @@
+import _ from "lodash";
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -15,6 +16,18 @@ class Overview extends Component {
     this.props.saveScrollPosition(window.scrollY);
   }
 
+  renderFontstyles() {
+    return _.map(this.props.fontstyles, fontstyle => {
+      return (
+        <Link key={fontstyle.name} className="card" to={"/" + fontstyle.name }>
+          <div className="card-body">
+            <div className="card-information">Repro {fontstyle.name}</div>
+            <div className={"card-letter " + fontstyle.className }>{fontstyle.activeLetter}</div>
+          </div>
+        </Link>
+      );
+    });
+  }
 
   render() {
     return (
@@ -23,21 +36,7 @@ class Overview extends Component {
           <h1 className="about">Repro ist eine Groteskschrift mit der DNA einer Monotype. Fünf weitere Schriftschnitte sind Reproduktionen dessen. Sie sind ein Produkt eines Algorithmus, welcher die Outlines auf ein darunter liegendes Raster verschiebt. Das Raster wird von Schnitt zu Schnitt gröber, bis das Ergebnis nur noch Form ist.</h1>
         </div>
         <div className="container fontstyles-overview">
-          <Link className="fontstyle-card" to="/null">
-            <div className="fontstyle-card-letter repro-Null">{this.props.fontstyles[0].activeLetter}</div>
-          </Link>
-          <Link className="fontstyle-card" to="/100">
-            <div className="fontstyle-card-letter repro-100">{this.props.fontstyles[1].activeLetter}</div>
-          </Link>
-          <Link className="fontstyle-card" to="/200">
-            <div className="fontstyle-card-letter repro-200">{this.props.fontstyles[2].activeLetter}</div>
-          </Link>
-          <Link className="fontstyle-card" to="/300">
-            <div className="fontstyle-card-letter repro-300">{this.props.fontstyles[3].activeLetter}</div>
-          </Link>
-          <Link className="fontstyle-card" to="/400">
-            <div className="fontstyle-card-letter repro-400">{this.props.fontstyles[4].activeLetter}</div>
-          </Link>
+          {this.renderFontstyles()}
         </div>
       </div>
     );
