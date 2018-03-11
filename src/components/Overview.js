@@ -33,7 +33,10 @@ class Overview extends Component {
     return (
       <div className="overview">
         <div className="container">
-          <h1 className="about">Repro ist eine Groteskschrift mit der DNA einer Monotype. Fünf weitere Schriftschnitte sind Reproduktionen dessen. Sie sind ein Produkt eines Algorithmus, welcher die Outlines auf ein darunter liegendes Raster verschiebt. Das Raster wird von Schnitt zu Schnitt gröber, bis das Ergebnis nur noch Form ist.</h1>
+          <div className="about">
+            <h1 className="text">Repro ist eine Groteskschrift mit der DNA einer Monotype. Fünf weitere Schriftschnitte sind Reproduktionen dessen. Sie sind ein Produkt eines Algorithmus, welcher die Outlines auf ein darunter liegendes Raster verschiebt. Das Raster wird von Schnitt zu Schnitt gröber, bis das Ergebnis nur noch Form ist.</h1>
+            <p className="text text-small">Repro Font, Julian Furchert, Lience, Github</p>
+          </div>
         </div>
         <div className="container fontstyles-overview">
           {this.renderFontstyles()}
