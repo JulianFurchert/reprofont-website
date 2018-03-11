@@ -11,6 +11,7 @@
   width: 100%;
   padding: 4px 0;
   border-top: 1px solid #B2B2B2;
+  font-family: 'Fira Mono', monospace;
 }
 
 .slide-navigation-mobile .flickity-slider{

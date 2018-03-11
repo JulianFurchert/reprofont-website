@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import './App.css';
 
 import Overview from './Overview';
-import Alphabet from './Alphabet';
+import LetterShowcase from './LetterShowcase';
 
 class App extends Component {
 
@@ -15,11 +15,11 @@ class App extends Component {
     return (
       <div className="App" >
          <Route exact path='/' component={Overview}/>
-         <Route exact path='/null'render={() => (<Alphabet id={0}/>)}/>
-         <Route exact path='/100' render={() => (<Alphabet id={1}/>)}/>
-         <Route exact path='/200' render={() => (<Alphabet id={2}/>)}/>
-         <Route exact path='/300' render={() => (<Alphabet id={3}/>)}/>
-         <Route exact path='/400' render={() => (<Alphabet id={4}/>)}/>
+         <Route exact path='/null'render={() => (<LetterShowcase id={0}/>)}/>
+         <Route exact path='/100' render={() => (<LetterShowcase id={1}/>)}/>
+         <Route exact path='/200' render={() => (<LetterShowcase id={2}/>)}/>
+         <Route exact path='/300' render={() => (<LetterShowcase id={3}/>)}/>
+         <Route exact path='/400' render={() => (<LetterShowcase id={4}/>)}/>
       </div>
     );
   }

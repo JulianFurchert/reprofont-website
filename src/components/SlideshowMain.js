@@ -2,9 +2,9 @@ import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { selectLetter } from "../actions/index";
-
 import Flickity from 'flickity';
-import './Letter.css';
+
+import './SlideshowMain.css';
 
 class Letter extends Component {
 
@@ -50,8 +50,4 @@ class Letter extends Component {
   }
 }
 
-function mapStateToProps({ fontstyles }, ownProps) {
-  return { fontstyle: fontstyles[ownProps.id] };
-}
-
-export default connect(mapStateToProps, { selectLetter })(Letter);
+export default connect(null, { selectLetter })(Letter);

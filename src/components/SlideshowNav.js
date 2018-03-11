@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { selectLetter } from "../actions/index";
 
 import Flickity from 'flickity';
-import './LetterNavigation.css';
+import './SlideshowNav.css';
 
 class LetterNavigation extends Component {
 
@@ -84,8 +84,4 @@ class LetterNavigation extends Component {
   }
 }
 
-function mapStateToProps({ fontstyles }, ownProps) {
-  return { fontstyle: fontstyles[ownProps.id] };
-}
-
-export default connect(mapStateToProps, { selectLetter })(LetterNavigation);
+export default connect(null, { selectLetter })(LetterNavigation);
