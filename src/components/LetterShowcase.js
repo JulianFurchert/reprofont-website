@@ -17,7 +17,7 @@ class LetterShowcase extends Component {
 
   render() {
     return (
-      <div className="alphabet">
+      <div className="letter-showcase">
         <Link className="close-button" to="/"></Link>
         {this.renderInformation(this.props.fontstyle)}
         <SlideshowMain id={this.props.id} fontstyle={this.props.fontstyle}/>

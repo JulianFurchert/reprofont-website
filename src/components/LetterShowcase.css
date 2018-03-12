@@ -1,4 +1,4 @@
-.alphabet {
+.letter-showcase {
   background-color: white;
   min-height: 100vh;
   position: fixed;
@@ -7,6 +7,7 @@
   left: 0;
   right: 0;
   overflow-y: scroll;
+  z-index: 100;
 }
 
 .alphabet-is-closing {
