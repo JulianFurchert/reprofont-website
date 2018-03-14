@@ -1,13 +1,12 @@
 import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { selectPage } from "../../actions/index";
 import Flickity from 'flickity';
 
-import { selectLetter } from "../../actions/index";
-import Letter from './Letter'
-import './SlideshowMain.css';
+import './SlideshowSpeciem.css';
 
-class SlideshowMain extends Component {
+class SlideshowSpeciem extends Component {
 
   shouldComponentUpdate(){
     return false;
@@ -32,7 +31,7 @@ class SlideshowMain extends Component {
     }
   }
 
-  renderLetters() {
+  renderPages() {
     return _.map(this.props.fontstyle.letters, letter => {
       return (
         <div key={letter} className='slideshow-item'>
@@ -51,4 +50,4 @@ class SlideshowMain extends Component {
   }
 }
 
-export default connect(null, { selectLetter })(SlideshowMain);
+export default connect(null, { selectLetter })(SlideshowSpeciem);

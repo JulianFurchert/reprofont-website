@@ -1,0 +1,40 @@
+.card {
+  display: inline-block;
+  height: 380px;
+  flex: 0 0 100%;
+  margin: 0;
+  margin-bottom: 32px;
+  padding: 0;
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+}
+
+.card-body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.card-information {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-family: 'Fira Mono', monospace;
+}
+
+@media (min-width: 576px) {
+  .card  {
+    flex: 0 0 50%;
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 768px){
+  .card  {
+    flex: 0 0 25%;
+  }
+}

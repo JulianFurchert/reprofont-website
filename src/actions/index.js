@@ -12,3 +12,10 @@ export function saveScrollPosition(position) {
     payload: position
   };
 }
+
+export function selectPage(index) {
+  return {
+    type: "PAGE_SELECTED",
+    payload: index
+  };
+}
