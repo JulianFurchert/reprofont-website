@@ -8,8 +8,21 @@
   right: 0;
   overflow-y: scroll;
   z-index: 100;
-  -webkit-transition: 3s;
-  transition: 3s;
+}
+
+.fade-enter {
+  top:20px;
+  bottom:20px;
+  left: 20px;
+  right: 200px;
+}
+
+.fade-enter.fade-enter-active {
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  transition: 300ms ease-in;
 }
 
 .close-button {

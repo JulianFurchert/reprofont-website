@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import LetterShowcase from './pages/LetterShowcase';
 import Download from './pages/Download';
 
-const AppAlt = () => (
+const App = () => (
   <Router>
     <Switch>
       <Route exact path='/null'render={() => (<LetterShowcase id={0}/>)}/>
@@ -24,7 +24,7 @@ const AppAlt = () => (
   </Router>
 );
 
-const App = () => (
+const AppNew = () => (
   <Router>
     <Route
       render={({ location }) => (

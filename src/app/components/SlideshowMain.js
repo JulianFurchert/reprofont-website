@@ -1,6 +1,7 @@
 import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import { selectLetter } from "../../actions/index";
 import Flickity from 'flickity';
 
@@ -51,4 +52,4 @@ class SlideshowMain extends Component {
   }
 }
 
-export default connect(null, { selectLetter })(SlideshowMain);
+export default withRouter(connect(null, { selectLetter })(SlideshowMain));
