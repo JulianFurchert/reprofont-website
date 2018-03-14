@@ -12,14 +12,6 @@
   transition: 3s;
 }
 
-.alphabet-is-closing {
-  top:20px;
-  bottom:20px;
-  left: 20px;
-  right: 20px;
-  border-radius: 8px;
-}
-
 .close-button {
   position: absolute;
   top:12px;

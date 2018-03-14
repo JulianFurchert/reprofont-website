@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import LetterShowcase from './pages/LetterShowcase';
 import Download from './pages/Download';
 
-const App = () => (
+const AppAlt = () => (
   <Router>
     <Switch>
       <Route exact path='/null'render={() => (<LetterShowcase id={0}/>)}/>
@@ -24,16 +24,11 @@ const App = () => (
   </Router>
 );
 
-const AppNeu = () => (
+const App = () => (
   <Router>
     <Route
       render={({ location }) => (
         <TransitionGroup>
-        {/* no different than other usage of
-          CSSTransition, just make sure to pass
-          `location` to `Switch` so it can match
-          the old location as it animates out
-        */}
           <CSSTransition key={location.key} classNames="fade" timeout={300}>
             <Switch location={location}>
               <Route exact path='/null'render={() => (<LetterShowcase id={0}/>)}/>
@@ -44,9 +39,6 @@ const AppNeu = () => (
               <Route exact path='/500' render={() => (<LetterShowcase id={5}/>)}/>
               <Route exact path='/600' render={() => (<LetterShowcase id={6}/>)}/>
               <Route exact path='/' component={Home}/>
-              {/* Without this `Route`, we would get errors during
-                the initial transition from `/` to `/hsl/10/90/50`
-              */}
               <Route render={() => <div>Not Found</div>} />
             </Switch>
           </CSSTransition>

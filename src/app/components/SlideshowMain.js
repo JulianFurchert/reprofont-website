@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { selectLetter } from "../actions/index";
+import { selectLetter } from "../../actions/index";
 import Flickity from 'flickity';
 
 import Letter from './Letter'

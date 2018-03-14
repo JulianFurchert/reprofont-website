@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { saveScrollPosition } from "../actions/index";
+import { saveScrollPosition } from "../../actions/index";
 
 import Letter from '../components/Letter'
 import './Home.css';
