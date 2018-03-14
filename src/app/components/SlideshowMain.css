@@ -1,0 +1,9 @@
+.slideshow-item {
+  width: 100%;
+  height: calc(100vh - 48px);
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}

@@ -4,9 +4,10 @@ import { connect } from "react-redux";
 import { selectLetter } from "../actions/index";
 import Flickity from 'flickity';
 
+import Letter from './Letter'
 import './SlideshowMain.css';
 
-class Letter extends Component {
+class SlideshowMain extends Component {
 
   shouldComponentUpdate(){
     return false;
@@ -35,7 +36,7 @@ class Letter extends Component {
     return _.map(this.props.fontstyle.letters, letter => {
       return (
         <div key={letter} className='slideshow-item'>
-          <div className={this.props.fontstyle.className + ' slideshow-content'}>{letter}</div>
+          <Letter cssClass={this.props.fontstyle.className} letter={letter} />
         </div>
       );
     });
@@ -50,4 +51,4 @@ class Letter extends Component {
   }
 }
 
-export default connect(null, { selectLetter })(Letter);
+export default connect(null, { selectLetter })(SlideshowMain);

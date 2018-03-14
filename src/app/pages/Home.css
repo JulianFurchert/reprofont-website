@@ -1,3 +1,11 @@
+.overview {
+  display: block;
+}
+
+.overview.fade-exit{
+  display: none;
+}
+
 .container {
   padding: 16px;
 }
@@ -36,6 +44,7 @@
   padding: 0;
   text-decoration: none;
   color: black;
+  overflow: hidden;
 }
 
 .card-body {
@@ -44,6 +53,7 @@
   height: 100%;
   background-color: white;
   border-radius: 8px;
+  padding: 12px;
 }
 
 .card-information {
@@ -58,7 +68,6 @@
   line-height: 340px;
   text-align: center;
 }
-
 
 @media (min-width: 576px) {
   .card  {

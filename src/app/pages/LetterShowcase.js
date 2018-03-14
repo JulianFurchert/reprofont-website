@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-import SlideshowMain from './SlideshowMain';
-import SlideshowNav from './SlideshowNav';
+import SlideshowMain from '../components/SlideshowMain';
+import SlideshowNav from '../components/SlideshowNav';
 
 import './LetterShowcase.css';
 

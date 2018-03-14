@@ -8,6 +8,8 @@
   right: 0;
   overflow-y: scroll;
   z-index: 100;
+  -webkit-transition: 3s;
+  transition: 3s;
 }
 
 .alphabet-is-closing {
