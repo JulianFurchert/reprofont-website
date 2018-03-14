@@ -1,0 +1,40 @@
+.button-close {
+  position: absolute;
+  top:12px;
+  right: 12px;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  line-height: 32px;
+  background-color: grey;
+  z-index: 2;
+}
+
+/*
+.button-close:before {
+  transform: rotate(-45deg);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: 25px;
+  display: block;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+}
+
+.button-close:after {
+  transform: rotate(45deg);
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: 25px;
+  display: block;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+} */

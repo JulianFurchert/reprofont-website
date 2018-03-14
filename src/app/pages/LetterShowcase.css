@@ -1,40 +1,6 @@
 .letter-showcase {
-  background-color: white;
-  min-height: 100vh;
-  position: fixed;
-  top:0;
-  bottom:0;
-  left: 0;
-  right: 0;
-  overflow-y: scroll;
-  z-index: 100;
-}
-
-.fade-enter {
-  top:20px;
-  bottom:20px;
-  left: 20px;
-  right: 200px;
-}
-
-.fade-enter.fade-enter-active {
-  top:0;
-  bottom:0;
-  left: 0;
-  right: 0;
-  transition: 300ms ease-in;
-}
-
-.close-button {
-  position: absolute;
-  top:12px;
-  right: 12px;
-  height: 32px;
-  width: 32px;
-  border-radius: 16px;
-  line-height: 32px;
-  background-color: grey;
-  z-index: 2;
+  width: 100%;
+  height:100%;
 }
 
 .information {
@@ -44,32 +10,3 @@
   z-index: 2;
   font-family: 'Fira Mono', monospace;
 }
-
-/*
-.close-button:before {
-  transform: rotate(-45deg);
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: 25px;
-  margin-left: 25px;
-  display: block;
-  height: 50px;
-  width: 50px;
-  background-color: black;
-}
-
-.close-button:after {
-  transform: rotate(45deg);
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: 25px;
-  margin-left: 25px;
-  display: block;
-  height: 50px;
-  width: 50px;
-  background-color: black;
-} */

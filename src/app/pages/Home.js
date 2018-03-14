@@ -8,6 +8,7 @@ import Letter from '../components/Letter'
 import './Home.css';
 
 class Overview extends Component {
+
   componentDidMount() {
     window.scrollTo(0, this.props.scrollPosition);
   }
