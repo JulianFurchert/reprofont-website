@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import Swipeable from 'react-swipeable'
 import './Card.css';
 
 class Card extends Component {
@@ -12,12 +13,12 @@ class Card extends Component {
 
   render(){
     return (
-      <Link className="card" to={this.props.link}>
-        <div className="card-body">
-          {this.renderInformation()}
-          {this.props.children}
-        </div>
-      </Link>
+        <Link className="card" to={this.props.link}>
+          <div className="card-body">
+            {this.renderInformation()}
+            {this.props.children}
+          </div>
+        </Link>
     )
   }
 }

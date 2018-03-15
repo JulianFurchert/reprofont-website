@@ -1,16 +1,24 @@
 .list-group {
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   padding-left: 0;
   list-style-type: none;
+  width: 100%;
+  max-width: 500px;
 }
 
 .list-group-item{
   position: relative;
-  padding: 12px;
+  padding: 12px 0;
   border-bottom: 1px solid rgba(0,0,0,.125);
+  font-family: 'Fira Mono', monospace;
 }
+
+.list-group-item-big{
+  padding: 16px;
+}
+
 
 .list-group-icon{
   float: right;
