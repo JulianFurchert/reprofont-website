@@ -8,19 +8,13 @@
   right: 0;
   overflow-y: scroll;
   z-index: 100;
+  /* transition: 3000ms ease-in; */
 }
 
-.fade-enter {
-  top:20px;
-  bottom:20px;
-  left: 20px;
-  right: 200px;
-}
-
-.fade-enter.fade-enter-active {
-  top:0;
+.enter-active {
+  /* top:0;
   bottom:0;
   left: 0;
-  right: 0;
-  transition: 300ms ease-in;
+  right: 0; */
+  /* transition: 3000ms ease-in; */
 }

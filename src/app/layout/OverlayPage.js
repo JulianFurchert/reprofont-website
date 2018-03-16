@@ -35,11 +35,10 @@ class OverlayPage extends Component {
   render() {
     return (
       <Swipeable
+      className="overlay-page"
       onSwipingDown={this.swipingDown.bind(this)}
       onSwipedDown={this.swipedDown.bind(this)} >
-        <div ref='letterShowcase' className="overlay-page">
           {this.props.children}
-        </div>
       </Swipeable>
     );
   }

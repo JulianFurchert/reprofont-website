@@ -16,22 +16,20 @@
   height: 100%;
   background-color: white;
   border-radius: 8px;
-  padding: 12px;
+  padding: 0;
 }
 
 .card-information {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  padding: 12px 0;
+  position: relative;
+  padding-bottom: 12px;
   font-family: 'Fira Mono', monospace;
   border-bottom: 1px solid rgba(0,0,0,.125);
+  padding: 12px;
 }
 
 @media (min-width: 576px) {
   .card  {
-    flex: 0 0 50%;
+    flex: 0 0 33%;
     padding: 0 16px;
   }
 }

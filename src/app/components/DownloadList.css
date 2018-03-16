@@ -10,15 +10,14 @@
 
 .list-group-item{
   position: relative;
-  padding: 12px 0;
+  padding: 12px 12px;
   border-bottom: 1px solid rgba(0,0,0,.125);
   font-family: 'Fira Mono', monospace;
 }
 
-.list-group-item-big{
-  padding: 16px;
+.list-group-item:hover{
+  background-color: rgba(0,0,0,.125);
 }
-
 
 .list-group-icon{
   float: right;
