@@ -1,6 +1,11 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { connect } from "react-redux";
 import { TransitionGroup, Transition } from "react-transition-group";
+import { saveScrollPosition } from "../actions/index";
+
+import anime from 'animejs';
+
 import './App.css';
 
 import Home from './pages/Home';
@@ -10,9 +15,40 @@ import Download from './pages/Download';
 
 class App extends Component {
 
+  shouldComponentUpdate(){
+    return false;
+  }
+
   onEnter(element){
+    console.log(this.props.cardPosition);
     if(element.classList.contains("overlay-page")){
-      console.log('onEnter: overlay-page');
+      // element.style.top = this.props.cardPosition.top + "px";
+      // element.style.left = this.props.cardPosition.left + "px";
+      // element.style.width = this.props.cardPosition.width + "px";
+      // element.style.height = this.props.cardPosition.height + "px";
+
+      var basicTimeline = anime.timeline();
+      basicTimeline
+        .add({
+          targets: element,
+          duration: 0,
+          top: this.props.cardPosition.top,
+          left: this.props.cardPosition.left,
+          right: this.props.cardPosition.right,
+          bottom: this.props.cardPosition.bottom
+        })
+        .add({
+          targets: element,
+          duration: 300,
+          easing: 'linear',
+          top: 0,
+          left: 0,
+          right: 0 ,
+          bottom: 0
+      });
+      this.props.saveScrollPosition(window.scrollY);
+    }else{
+      window.scrollTo(0, this.props.scrollPosition);
     }
   }
 
@@ -32,7 +68,7 @@ class App extends Component {
             <TransitionGroup>
               <Transition
               key={location.key}
-              timeout={200}
+              timeout={300}
               onEnter={(e)=> { this.onEnter(e) }}
               onExit={(e) => { this.onExit(e) }} >
                 <Switch location={location}>
@@ -55,4 +91,8 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps({ scrollPosition, cardPosition }) {
+  return { scrollPosition, cardPosition };
+}
+
+export default connect(mapStateToProps, {saveScrollPosition} )(App);

@@ -18,7 +18,7 @@ class LetterShowcase extends Component {
 
   render() {
     return (
-      <OverlayPage>
+      <OverlayPage fontstyle={this.props.fontstyle.name}>
         <div className="letter-showcase">
           <ButtonClose/>
           {this.renderInformation(this.props.fontstyle)}

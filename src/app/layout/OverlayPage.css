@@ -1,20 +1,10 @@
 .overlay-page{
   background-color: white;
-  min-height: 100vh;
   position: fixed;
   top:0;
   bottom:0;
-  left: 0;
-  right: 0;
-  overflow-y: scroll;
+  left:0;
+  right:0;
+  overflow-y: hidden;
   z-index: 100;
-  /* transition: 3000ms ease-in; */
-}
-
-.enter-active {
-  /* top:0;
-  bottom:0;
-  left: 0;
-  right: 0; */
-  /* transition: 3000ms ease-in; */
 }

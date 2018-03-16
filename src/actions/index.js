@@ -13,9 +13,17 @@ export function saveScrollPosition(position) {
   };
 }
 
+export function saveCardPosition(position) {
+  return {
+    type: "CARD_POSITION_SAVED",
+    payload: position
+  };
+}
+
 export function selectPage(index) {
   return {
     type: "PAGE_SELECTED",
     payload: index
   };
 }
+

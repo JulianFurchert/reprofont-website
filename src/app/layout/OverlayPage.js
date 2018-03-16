@@ -6,10 +6,6 @@ import './OverlayPage.css';
 
 class OverlayPage extends Component {
 
-  componentDidMount() {
-
-  }
-
   swipingDown(e, absX) {
     // if(absX > 150){
     //   this.props.history.push('/')
@@ -35,6 +31,7 @@ class OverlayPage extends Component {
   render() {
     return (
       <Swipeable
+      id={this.props.fontstyle}
       className="overlay-page"
       onSwipingDown={this.swipingDown.bind(this)}
       onSwipedDown={this.swipedDown.bind(this)} >
