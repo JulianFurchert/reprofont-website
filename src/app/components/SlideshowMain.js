@@ -45,7 +45,7 @@ class SlideshowMain extends Component {
   render() {
     return (
       <div ref='slideshow' className='slideshow'>
-       {this.renderLetters()}
+      {this.renderLetters()}
       </div>
     );
   }

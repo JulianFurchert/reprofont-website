@@ -8,18 +8,3 @@
   overflow-y: hidden;
   z-index: 100;
 }
-
-.overlay-enter{
-  top:20px;
-  bottom:20px;
-  left:20px;
-  right:20px;
-}
-
-.overlay-enter.overlay-entering{
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  transition: 2000ms;
-}

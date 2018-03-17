@@ -1,17 +1,13 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { connect } from "react-redux";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { saveScrollPosition } from "../actions/index";
-
-import anime from 'animejs';
 
 import './App.css';
 
 import Home from './pages/Home';
 import LetterShowcase from './pages/LetterShowcase';
 import Download from './pages/Download';
-
 
 class App extends Component {
 
@@ -22,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Switch location={location}>
+        <Switch>
           <Route exact path='/null' render={() => (<LetterShowcase id={0}/>)}/>
           <Route exact path='/100' render={() => (<LetterShowcase id={1}/>)}/>
           <Route exact path='/200' render={() => (<LetterShowcase id={2}/>)}/>

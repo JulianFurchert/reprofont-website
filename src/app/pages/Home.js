@@ -1,6 +1,7 @@
 import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { saveScrollPosition } from "../../actions/index";
 import './Home.css';
 
 import Letter from '../components/Letter'
@@ -8,6 +9,14 @@ import Card from '../components/Card'
 import DownloadList from '../components/DownloadList'
 
 class Overview extends Component {
+
+  componentDidMount() {
+    window.scrollTo(0, this.props.scrollPosition);
+  }
+
+  componentWillUnmount(){
+    this.props.saveScrollPosition(window.scrollY);
+  }
 
   renderFontstyles() {
     return _.map(this.props.fontstyles, fontstyle => {
@@ -43,4 +52,4 @@ function mapStateToProps({ scrollPosition, fontstyles }) {
   return { scrollPosition, fontstyles };
 }
 
-export default connect(mapStateToProps)(Overview);
+export default connect(mapStateToProps, { saveScrollPosition })(Overview);
