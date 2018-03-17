@@ -7,30 +7,33 @@ import './OverlayPage.css';
 class OverlayPage extends Component {
 
   swipingDown(e, absX) {
+    // var element = this.refs.letterShowcase.element;
     // if(absX > 150){
     //   this.props.history.push('/')
     // }else{
-    //   this.refs.letterShowcase.style.top = absX/4 + "px";
-    //   this.refs.letterShowcase.style.left = absX/6 + "px";
-    //   this.refs.letterShowcase.style.bottom = absX/4 + "px";
-    //   this.refs.letterShowcase.style.right = absX/6 + "px";
+    //   element.style.top = absX/4 + "px";
+    //   element.style.left = absX/6 + "px";
+    //   element.style.bottom = absX/4 + "px";
+    //   element.style.right = absX/6 + "px";
     // }
   }
 
   swipedDown(e, deltaY, isFlick) {
+    // var element = this.refs.letterShowcase.element;
     // if(deltaY < -150){
     //   this.props.history.push('/')
     // }else{
-    //   this.refs.letterShowcase.style.top = "0px";
-    //   this.refs.letterShowcase.style.left = "0px";
-    //   this.refs.letterShowcase.style.bottom = "0px";
-    //   this.refs.letterShowcase.style.right = "0px";
+    //   element.style.top = "0px";
+    //   element.style.left = "0px";
+    //   element.style.bottom = "0px";
+    //   element.style.right = "0px";
     // }
   }
 
   render() {
     return (
       <Swipeable
+      ref="letterShowcase"
       id={this.props.fontstyle}
       className="overlay-page"
       onSwipingDown={this.swipingDown.bind(this)}
