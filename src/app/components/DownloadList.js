@@ -3,7 +3,6 @@ import './DownloadList.css';
 
 const DownloadList = (props) => (
   <ul className="list-group">
-    <li className="list-group-item">Repro Family</li>
     <li className="list-group-item">Repro Null</li>
     <li className="list-group-item">Repro 100</li>
     <li className="list-group-item">Repro 200</li>

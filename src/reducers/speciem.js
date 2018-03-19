@@ -1,7 +1,5 @@
 const defaultState = {
-  activePage: 0,
-  pages: 80,
-  folder: './img/speciem/'
+  activePage: 0
 }
 
 export default function(state = defaultState, action) {

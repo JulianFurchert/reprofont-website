@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
-import { saveCardPosition } from "../../actions/index";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Swipeable from 'react-swipeable'
 import './Card.css';
@@ -13,27 +12,16 @@ class Card extends Component {
     }
   }
 
-  cardClicked(){
-    var boundingClientRect = this.refs.card.getBoundingClientRect();
-    this.props.saveCardPosition({
-      left: boundingClientRect.left,
-      top: boundingClientRect.top,
-      right: window.innerWidth - boundingClientRect.right,
-      bottom: window.innerHeight - boundingClientRect.bottom,
-    })
-    this.props.history.push(this.props.link)
-  }
-
   render(){
     return (
-        <div ref="card" onClick={this.cardClicked.bind(this)} className="card" id={this.props.id}>
+        <Link className="card" id={this.props.id} to={this.props.link}>
           <div className="card-body">
             {this.renderInformation()}
             {this.props.children}
           </div>
-        </div>
+        </Link>
     )
   }
 }
 
-export default withRouter( connect(null, {saveCardPosition} )( Card ) );
+export default Card;

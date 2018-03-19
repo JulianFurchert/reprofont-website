@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 import OverlayPage from '../layout/OverlayPage';
-import SlideshowMain from '../components/SlideshowMain';
-import SlideshowNav from '../components/SlideshowNav';
+import LetterSlideshow from '../components/LetterSlideshow';
+import LetterNavigation from '../components/LetterNavigation';
 import ButtonClose from '../components/ButtonClose';
 
 import './LetterShowcase.css';
@@ -18,12 +18,12 @@ class LetterShowcase extends Component {
 
   render() {
     return (
-      <OverlayPage fontstyle={this.props.fontstyle.name}>
+      <OverlayPage>
         <div className="letter-showcase">
           <ButtonClose/>
           {this.renderInformation(this.props.fontstyle)}
-          <SlideshowMain id={this.props.id} fontstyle={this.props.fontstyle}/>
-          <SlideshowNav id={this.props.id} fontstyle={this.props.fontstyle}/>
+          <LetterSlideshow id={this.props.id} fontstyle={this.props.fontstyle}/>
+          <LetterNavigation id={this.props.id} fontstyle={this.props.fontstyle}/>
         </div>
       </OverlayPage>
     );

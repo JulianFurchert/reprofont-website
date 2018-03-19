@@ -34,7 +34,6 @@ class OverlayPage extends Component {
     return (
       <Swipeable
       ref="letterShowcase"
-      id={this.props.fontstyle}
       className="overlay-page"
       onSwipingDown={this.swipingDown.bind(this)}
       onSwipedDown={this.swipedDown.bind(this)} >

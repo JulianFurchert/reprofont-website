@@ -1,0 +1,32 @@
+
+.slide-navigation-container {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  padding: 6px 0;
+  border-top: 1px solid rgba(0,0,0,.125);
+  font-family: 'Fira Mono', monospace;
+}
+
+.slide-navigation-mobile .flickity-slider{
+  cursor: default;
+}
+
+.speciem-navigation-item {
+  width: 60px;
+  height: 40px;
+  margin-right: 4px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: grey;
+}
+
+.speciem-navigation-img {
+  margin: auto;
+  max-height: 100%;
+}

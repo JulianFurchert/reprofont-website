@@ -1,6 +1,7 @@
 import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom'
 import { saveScrollPosition } from "../../actions/index";
 import './Home.css';
 
@@ -34,7 +35,7 @@ class Overview extends Component {
         <div className="container">
           <div className="about">
             <h1 className="text">Repro ist eine Groteskschrift mit der DNA einer Monotype. Fünf weitere Schriftschnitte sind Reproduktionen dessen. Sie sind ein Produkt eines Algorithmus, welcher die Outlines auf ein darunter liegendes Raster verschiebt. Das Raster wird von Schnitt zu Schnitt gröber, bis das Ergebnis nur noch Form ist.</h1>
-            <p className="text text-small">Speciem, License, Github</p>
+            <p className="text text-small"><Link to="/speciem">Speciem</Link>, License, Github</p>
           </div>
         </div>
         <div className="container fontstyles-overview">

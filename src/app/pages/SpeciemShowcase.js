@@ -2,25 +2,22 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 import OverlayPage from '../layout/OverlayPage';
-import SlideshowSpeciem from '../components/SlideshowSpeciem';
+import SpeciemSlideshow from '../components/SpeciemSlideshow';
+import SpeciemNavigation from '../components/SpeciemNavigation';
 import ButtonClose from '../components/ButtonClose';
+
 
 import './SpeciemShowcase.css';
 
-class SpeciemShowcase extends Component {
-
-  renderInformation({ name, activeLetterIndex, letters }) {
-    return (
-      <div className="information">Repro {name} - { ( '0' + (activeLetterIndex+1) ).slice(-2) }/{ letters.length }</div>
-    )
-  }
-
+class LetterShowcase extends Component {
   render() {
     return (
       <OverlayPage>
-        <div className="letter-showcase">
+        <div className="speciem-showcase">
           <ButtonClose/>
-          <SpeciemShowcase speciem={this.props.speciem} />
+          <div className="information">Repro Speciem - {this.props.speciem.activePage}/80</div>
+          <SpeciemSlideshow speciem={this.props.speciem}/>
+          <SpeciemNavigation speciem={this.props.speciem}/>
         </div>
       </OverlayPage>
     );
@@ -31,4 +28,4 @@ function mapStateToProps({ speciem }) {
   return { speciem };
 }
 
-export default connect( mapStateToProps )( SpeciemShowcase );
+export default connect(mapStateToProps)(LetterShowcase);

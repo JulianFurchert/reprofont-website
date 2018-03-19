@@ -7,7 +7,7 @@ import './App.css';
 
 import Home from './pages/Home';
 import LetterShowcase from './pages/LetterShowcase';
-import Download from './pages/Download';
+import SpeciemShowcase from './pages/SpeciemShowcase';
 
 class App extends Component {
 
@@ -26,6 +26,7 @@ class App extends Component {
           <Route exact path='/400' render={() => (<LetterShowcase id={4}/>)}/>
           <Route exact path='/500' render={() => (<LetterShowcase id={5}/>)}/>
           <Route exact path='/600' render={() => (<LetterShowcase id={6}/>)}/>
+          <Route exact path='/speciem' render={() => (<SpeciemShowcase id={1}/>)}/>
           <Route exact path='/' component={Home}/>
           <Route render={() => <div>Not Found</div>} />
         </Switch>
