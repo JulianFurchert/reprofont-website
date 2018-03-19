@@ -10,6 +10,7 @@
 
 .slideshow-img {
   margin: auto;
+  width: 1920px;
   max-height: 80%;
   max-width: 90%;
 }

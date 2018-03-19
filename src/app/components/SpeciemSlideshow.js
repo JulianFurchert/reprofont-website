@@ -45,6 +45,7 @@ class SlideshowMain extends Component {
           <img
             className="slideshow-img"
             alt={`Repro Speciem Page ${index}`}
+            src={img256[index]}
             data-flickity-lazyload={img1280[index]}
             data-flickity-lazyload-srcset={`${img1920[index]} 1920w, ${img1280[index]} 1280w, ${img768[index]} 768w, ${img256[index]} 256w`}
           />
