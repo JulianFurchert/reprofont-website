@@ -20,16 +20,13 @@ class LetterNavigation extends Component {
       freeScroll: true,
       freeScrollFriction: 0.1,
       // selectedAttraction: 0.01,
-      // friction: 0.15,
+      // friction: 0.13,
       contain: false
     });
 
+    this.onScrolling = false;
+    this.scrollIndex = this.props.speciem.activePage;
     this.updateFocused(this.props.speciem.activePage);
-
-    this.flkty.on( 'dragEnd', ()=> {
-      this.updateHistory( this.flkty.selectedIndex );
-      this.updateFocused( this.flkty.selectedIndex );
-    });
 
     this.flkty.on( 'staticClick', (event, pointer, cellElement, cellIndex) => {
       if ( cellElement ) {
@@ -38,12 +35,23 @@ class LetterNavigation extends Component {
       }
     })
 
+    this.flkty.on( 'dragStart', ()=> {
+      this.onScrolling = true;
+    });
+
     this.flkty.on( 'scroll', (progress)=> {
-      if(this.flkty.isDragging){
+      if(this.onScrolling){
+        if(this.scrollEnd){ clearTimeout(this.scrollEnd) };
         progress = Math.max( 0, Math.min( 1, progress ) );
-        progress = progress*10;
-        progress = Math.round(this.map(progress,0,10,0,this.flkty.cells.length));
-        this.updateHistory(progress);
+        progress = Math.round(this.map(progress,0,1,0,this.flkty.cells.length-1));
+        this.scrollIndex = progress;
+        this.updateHistory( progress );
+        this.scrollEnd = setTimeout( (progress)=> {
+          this.onScrolling = false;
+          this.flkty.select( this.scrollIndex  );
+          this.updateFocused( this.scrollIndex  );
+          this.updateHistory( this.scrollIndex  );
+        }, 50);
       }
     });
   }
@@ -56,17 +64,17 @@ class LetterNavigation extends Component {
     this.props.selectPage(index)
   }
 
-  updateFocused(cellIndex){
-    this.flkty.select(cellIndex);
+  updateFocused(index){
     var prevClickedCell = document.querySelector('.is-focused');
     if ( prevClickedCell ) {
       prevClickedCell.classList.remove('is-focused');
     }
-    this.flkty.selectedElement.classList.add('is-focused');
+    this.flkty.cells[index].element.classList.add('is-focused');
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.flkty.selectedIndex !== parseInt(nextProps.speciem.activePage,10)){
+    if(this.flkty.selectedIndex !== nextProps.speciem.activePage && !this.onScrolling){
+      console.log('updateProps');
       this.flkty.select( nextProps.speciem.activePage );
       this.updateFocused( nextProps.speciem.activePage );
     }

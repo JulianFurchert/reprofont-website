@@ -15,7 +15,7 @@ class LetterShowcase extends Component {
       <OverlayPage>
         <div className="speciem-showcase">
           <ButtonClose/>
-          <div className="information">Repro Speciem - {this.props.speciem.activePage}/80</div>
+          {/* <div className="information">Repro Speciem - {this.props.speciem.activePage}/80</div> */}
           <SpeciemSlideshow speciem={this.props.speciem}/>
           <SpeciemNavigation speciem={this.props.speciem}/>
         </div>

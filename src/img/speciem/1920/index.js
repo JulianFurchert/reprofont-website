@@ -34,6 +34,5 @@ export default [
   require('./speciem33.jpg'),
   require('./speciem34.jpg'),
   require('./speciem35.jpg'),
-  require('./speciem36.jpg'),
-  require('./speciem37.jpg')
+  require('./speciem36.jpg')
 ]

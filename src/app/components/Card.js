@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import Swipeable from 'react-swipeable'
 import './Card.css';
 
 class Card extends Component {

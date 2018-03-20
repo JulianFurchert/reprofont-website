@@ -16,14 +16,18 @@
 }
 
 .speciem-navigation-item {
+  display: flex;
+  align-items: center;
   width: 60px;
   height: 40px;
   margin-right: 4px;
   border-radius: 0;
-  display: flex;
-  align-items: center;
   cursor: pointer;
   color: grey;
+}
+
+.speciem-navigation-item.is-focused{
+  opacity: 0.4;
 }
 
 .speciem-navigation-img {

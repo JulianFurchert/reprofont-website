@@ -23,7 +23,7 @@ class Overview extends Component {
     return _.map(this.props.fontstyles, fontstyle => {
       return (
         <Card id={"card-" + fontstyle.name } key={fontstyle.name} link={"/" + fontstyle.name } information={'Repro ' + fontstyle.name}>
-          <Letter cssClass={fontstyle.className + " letter-card"} letter={fontstyle.activeLetter} />
+          <Letter cssClass={fontstyle.className + " letter-card style-" + fontstyle.letters[fontstyle.activeLetterIndex].style} letter={fontstyle.activeLetter} />
         </Card>
       );
     });

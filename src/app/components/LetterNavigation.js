@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { selectLetter } from "../../actions/index";
@@ -20,16 +19,13 @@ class LetterNavigation extends Component {
       freeScroll: true,
       freeScrollFriction: 0.1,
       // selectedAttraction: 0.01,
-      // friction: 0.15,
+      // friction: 0.13,
       contain: false
     });
 
+    this.onScrolling = false;
+    this.scrollIndex = this.props.fontstyle.activeLetterIndex;
     this.updateFocused(this.props.fontstyle.activeLetterIndex);
-
-    this.flkty.on( 'dragEnd', ()=> {
-      this.updateHistory( this.flkty.selectedIndex );
-      this.updateFocused( this.flkty.selectedIndex );
-    });
 
     this.flkty.on( 'staticClick', (event, pointer, cellElement, cellIndex) => {
       if ( cellElement ) {
@@ -38,12 +34,23 @@ class LetterNavigation extends Component {
       }
     })
 
+    this.flkty.on( 'dragStart', ()=> {
+      this.onScrolling = true;
+    });
+
     this.flkty.on( 'scroll', (progress)=> {
-      if(this.flkty.isDragging){
+      if(this.onScrolling){
+        if(this.scrollEnd){ clearTimeout(this.scrollEnd) };
         progress = Math.max( 0, Math.min( 1, progress ) );
-        progress = progress*10;
-        progress = Math.round(this.map(progress,0,10,0,this.flkty.cells.length));
-        this.updateHistory(progress);
+        progress = Math.round(this.map(progress,0,1,0,this.flkty.cells.length-1));
+        this.scrollIndex = progress;
+        this.updateHistory( progress );
+        this.scrollEnd = setTimeout( (progress)=> {
+          this.onScrolling = false;
+          this.flkty.select( this.scrollIndex  );
+          this.updateFocused( this.scrollIndex  );
+          this.updateHistory( this.scrollIndex  );
+        }, 50);
       }
     });
   }
@@ -56,27 +63,26 @@ class LetterNavigation extends Component {
     this.props.selectLetter(this.props.id,index)
   }
 
-  updateFocused(cellIndex){
-    this.flkty.select(cellIndex);
+  updateFocused(index){
     var prevClickedCell = document.querySelector('.is-focused');
     if ( prevClickedCell ) {
       prevClickedCell.classList.remove('is-focused');
     }
-    this.flkty.selectedElement.classList.add('is-focused');
+    this.flkty.cells[index].element.classList.add('is-focused');
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.flkty.selectedIndex !== parseInt(nextProps.fontstyle.activeLetterIndex,10)){
-      this.flkty.select( nextProps.fontstyle.activeLetterIndex);
-      this.updateFocused( nextProps.fontstyle.activeLetterIndex);
+    if(this.flkty.selectedIndex !== nextProps.fontstyle.activeLetterIndex && !this.onScrolling){
+      this.flkty.select( nextProps.fontstyle.activeLetterIndex );
+      this.updateFocused( nextProps.fontstyle.activeLetterIndex );
     }
   }
 
-  renderLetters() {
-    return _.map(this.props.fontstyle.letters, letter => {
+  renderLetters(letters) {
+    return letters.map(letter => {
       return (
-        <div key={letter} className='slide-navigation-item-mobile'>
-          <div className='slide-navigation-content'>{letter}</div>
+        <div key={letter.letter + letter.style } className='slide-navigation-item-mobile'>
+          <div className='slide-navigation-content'>{letter.letter}</div>
         </div>
       );
     });
@@ -86,7 +92,7 @@ class LetterNavigation extends Component {
     return (
       <div className='slide-navigation-container'>
         <div ref='slidenavigationmobile' className='slide-navigation-mobile'>
-          {this.renderLetters()}
+          {this.renderLetters(this.props.fontstyle.letters)}
         </div>
       </div>
     );

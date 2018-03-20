@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Flickity from 'flickity';
 
 import { selectPage } from "../../actions/index";
-import Letter from './Letter';
 import './SpeciemSlideshow.css';
 
 import img256 from '../../img/speciem/256';
@@ -24,7 +23,9 @@ class SlideshowMain extends Component {
       cellSelector: '.slideshow-item',
       pageDots: false,
       prevNextButtons: false,
-      lazyLoad: 2
+      lazyLoad: 3,
+      selectedAttraction: 0.04,
+      friction: 0.3,
     });
 
     this.flkty.on('dragEnd', ()=>{
@@ -42,13 +43,16 @@ class SlideshowMain extends Component {
     return img1920.map( (img,index) =>{
       return (
         <div key={index} className='slideshow-item'>
-          <img
-            className="slideshow-img"
-            alt={`Repro Speciem Page ${index}`}
-            src={img256[index]}
-            data-flickity-lazyload={img1280[index]}
-            data-flickity-lazyload-srcset={`${img1920[index]} 1920w, ${img1280[index]} 1280w, ${img768[index]} 768w, ${img256[index]} 256w`}
-          />
+          {/* <div className="aspect-ratio-placeholder"> */}
+            <img
+              className="slideshow-img"
+              alt={`Repro Speciem Page ${index}`}
+              src={img256[index]}
+              data-flickity-lazyload={img1280[index]}
+              // height="1920px" width="1333px"
+              data-flickity-lazyload-srcset={`${img1920[index]} 1920w, ${img1280[index]} 1280w, ${img768[index]} 768w, ${img256[index]} 256w`}
+            />
+          {/* </div> */}
         </div>
       );
     });

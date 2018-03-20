@@ -14,7 +14,8 @@
     "react-scripts": "1.1.1",
     "react-swipeable": "^4.2.0",
     "react-transition-group": "^2.2.1",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "webfontloader": "^1.6.28"
   },
   "scripts": {
     "start": "react-scripts start",

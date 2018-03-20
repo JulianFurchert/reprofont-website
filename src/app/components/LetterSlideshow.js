@@ -1,4 +1,3 @@
-import _ from "lodash";
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Flickity from 'flickity';
@@ -27,16 +26,16 @@ class SlideshowMain extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.flkty.selectedIndex !== parseInt(nextProps.fontstyle.activeLetterIndex,10)){
+    if(this.flkty.selectedIndex !== nextProps.fontstyle.activeLetterIndex){
       this.flkty.select( nextProps.fontstyle.activeLetterIndex, false, true );
     }
   }
 
-  renderLetters() {
-    return _.map(this.props.fontstyle.letters, letter => {
+  renderLetters(letters) {
+    return letters.map(letter => {
       return (
-        <div key={letter} className='slideshow-item'>
-          <Letter cssClass={this.props.fontstyle.className} letter={letter} />
+        <div key={letter.letter + letter.style} className='slideshow-item'>
+          <Letter badge={letter.style !== "default" ? letter.style : ""} cssClass={this.props.fontstyle.className + " style-" + letter.style} letter={letter.letter} />
         </div>
       );
     });
@@ -45,7 +44,7 @@ class SlideshowMain extends Component {
   render() {
     return (
       <div ref='slideshow' className='slideshow'>
-      {this.renderLetters()}
+      {this.renderLetters(this.props.fontstyle.letters)}
       </div>
     );
   }
