@@ -1,5 +1,4 @@
-
-.slide-navigation-container {
+.letter-navigation-container {
   background-color: white;
   position: fixed;
   bottom: 0;
@@ -11,11 +10,20 @@
   font-family: 'Fira Mono', monospace;
 }
 
-.slide-navigation-mobile .flickity-slider{
+.fade-enter .letter-navigation-container{
+  transform: translateY(200px);
+}
+
+.fade-enter.fade-enter-active .letter-navigation-container{
+  transform: translateY(0);
+  transition: 200ms;
+}
+
+.letter-navigation .flickity-slider{
   cursor: default;
 }
 
-.slide-navigation-item-mobile {
+.letter-navigation-item {
   width: 25px;
   height: 40px;
   margin-right: 4px;
@@ -26,11 +34,11 @@
   color: grey;
 }
 
-.slide-navigation-item-mobile.is-focused{
+.letter-navigation-item.is-focused{
   color: black;
 }
 
-.slide-navigation-content {
+.letter-navigation-content {
   margin: auto;
   font-size: 26px
 }

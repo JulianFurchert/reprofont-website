@@ -1,9 +1,17 @@
 .slideshow-item {
   width: 100%;
-  height: calc(100vh - 48px);
+  height: 100%;
   margin-right: 10px;
   background-color: white;
   border-radius: 5px;
   display: flex;
   align-items: center;
+}
+
+.slideshow {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: calc(100vh - 56px);
 }

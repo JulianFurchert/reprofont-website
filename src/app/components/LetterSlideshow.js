@@ -20,14 +20,21 @@ class SlideshowMain extends Component {
       prevNextButtons: false
     });
 
+    this.flkty.on('dragStart', ()=>{
+      this.props.setScrolledComponent('LetterSlideshow');
+    });
+
     this.flkty.on('dragEnd', ()=>{
       this.props.selectLetter(this.props.id,this.flkty.selectedIndex)
     });
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.flkty.selectedIndex !== nextProps.fontstyle.activeLetterIndex){
-      this.flkty.select( nextProps.fontstyle.activeLetterIndex, false, true );
+    if(this.props.scrolledComponent !== 'LetterSlideshow'){
+      console.log("componentWillReceiveProps");
+      if(this.flkty.selectedIndex !== nextProps.fontstyle.activeLetterIndex){
+        this.flkty.select( nextProps.fontstyle.activeLetterIndex, false, true );
+      }
     }
   }
 
@@ -35,7 +42,10 @@ class SlideshowMain extends Component {
     return letters.map(letter => {
       return (
         <div key={letter.letter + letter.style} className='slideshow-item'>
-          <Letter badge={letter.style !== "default" ? letter.style : ""} cssClass={this.props.fontstyle.className + " style-" + letter.style} letter={letter.letter} />
+          <Letter
+            cssClass={this.props.fontstyle.className + " style-" + letter.style}
+            letter={letter.letter}
+          />
         </div>
       );
     });
@@ -44,7 +54,7 @@ class SlideshowMain extends Component {
   render() {
     return (
       <div ref='slideshow' className='slideshow'>
-      {this.renderLetters(this.props.fontstyle.letters)}
+        {this.renderLetters(this.props.fontstyle.letters)}
       </div>
     );
   }

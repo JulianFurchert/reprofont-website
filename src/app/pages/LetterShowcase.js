@@ -10,12 +10,31 @@ import './LetterShowcase.css';
 
 class LetterShowcase extends Component {
 
+  constructor(props) {
+    super(props);
+    this.scrolledComponent = null
+    this.index = 0;
+  }
+
+  setScrolledComponent(scrolledComponent){
+    this.scrolledComponent = scrolledComponent
+  }
+
+  setIndex(index){
+    this.index = index;
+  }
+
   renderInformation({ name, activeLetterIndex, letters }) {
-    var letter = letters[activeLetterIndex];
-    var letterName = letter.letter + (letter.style==="default" ? "" : "." + letter.style) ;
     return (
-      // <div className="information">Repro {name} - {letterName}</div>
       <div className="information">Repro {name} - { ( '0' + (activeLetterIndex+1) ).slice(-2) }/{ letters.length }</div>
+    )
+  }
+
+  renderBadge(style){
+    return (
+      <div className={'badge ' + (style !== 'default' ? 'open' : 'close')}>
+        {style}
+      </div>
     )
   }
 
@@ -25,8 +44,19 @@ class LetterShowcase extends Component {
         <div className="letter-showcase">
           <ButtonClose/>
           {this.renderInformation(this.props.fontstyle)}
-          <LetterSlideshow id={this.props.id} fontstyle={this.props.fontstyle}/>
-          <LetterNavigation id={this.props.id} fontstyle={this.props.fontstyle}/>
+          <LetterSlideshow
+            scrolledComponent={this.scrolledComponent}
+            setScrolledComponent={this.setScrolledComponent.bind(this)}
+            id={this.props.id}
+            fontstyle={this.props.fontstyle}
+          />
+          {this.renderBadge(this.props.fontstyle.letters[this.props.fontstyle.activeLetterIndex].style)}
+          <LetterNavigation
+            scrolledComponent={this.scrolledComponent}
+            setScrolledComponent={this.setScrolledComponent.bind(this)}
+            id={this.props.id}
+            fontstyle={this.props.fontstyle}
+          />
         </div>
       </OverlayPage>
     );

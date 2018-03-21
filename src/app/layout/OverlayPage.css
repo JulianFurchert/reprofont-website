@@ -5,6 +5,44 @@
   bottom:0;
   left:0;
   right:0;
-  overflow-y: hidden;
+  overflow: hidden;
   z-index: 100;
+}
+
+.overlay-page.fade-enter{
+  border-radius: 8px;
+  top:20px;
+  bottom:20px;
+  left:20px;
+  right:20px;
+}
+
+@media (min-width: 576px) {
+  .overlay-page.fade-enter{
+    border-radius: 8px;
+    top:50px;
+    bottom:50px;
+    left:50px;
+    right:50px;
+  }
+}
+
+.overlay-page.fade-enter.fade-enter-active{
+  border-radius: 0;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  transition: 200ms;
+}
+
+.overlay-page.fade-exit{
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
+.overlay-page.fade-exit.fade-exit-active{
+
 }

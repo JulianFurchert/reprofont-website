@@ -14,11 +14,9 @@ class Overview extends Component {
   componentDidMount() {
     window.scrollTo(0, this.props.scrollPosition);
   }
-
   componentWillUnmount(){
     this.props.saveScrollPosition(window.scrollY);
   }
-
   renderFontstyles() {
     return _.map(this.props.fontstyles, fontstyle => {
       return (

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { selectLetter } from "../../actions/index";
+import { CSSTransition } from "react-transition-group";
 
 import Flickity from 'flickity';
 import './LetterNavigation.css';
@@ -29,12 +30,14 @@ class LetterNavigation extends Component {
 
     this.flkty.on( 'staticClick', (event, pointer, cellElement, cellIndex) => {
       if ( cellElement ) {
+        this.props.setScrolledComponent('LetterNavigation');
         this.updateHistory( cellIndex );
         this.updateFocused( cellIndex );
       }
     })
 
     this.flkty.on( 'dragStart', ()=> {
+      this.props.setScrolledComponent('LetterNavigation');
       this.onScrolling = true;
     });
 
@@ -45,6 +48,7 @@ class LetterNavigation extends Component {
         progress = Math.round(this.map(progress,0,1,0,this.flkty.cells.length-1));
         this.scrollIndex = progress;
         this.updateHistory( progress );
+        this.updateFocused( progress  );
         this.scrollEnd = setTimeout( (progress)=> {
           this.onScrolling = false;
           this.flkty.select( this.scrollIndex  );
@@ -72,17 +76,29 @@ class LetterNavigation extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.flkty.selectedIndex !== nextProps.fontstyle.activeLetterIndex && !this.onScrolling){
+    if(nextProps.scrolledComponent === 'LetterSlideshow'){
+      this.onScrolling = false;
+      clearTimeout(this.scrollEnd);
       this.flkty.select( nextProps.fontstyle.activeLetterIndex );
       this.updateFocused( nextProps.fontstyle.activeLetterIndex );
+    }
+  }
+
+  renderBadge(style){
+    if(style !== 'default'){
+      return (
+        <div className="badge">
+          {style}
+        </div>
+      )
     }
   }
 
   renderLetters(letters) {
     return letters.map(letter => {
       return (
-        <div key={letter.letter + letter.style } className='slide-navigation-item-mobile'>
-          <div className='slide-navigation-content'>{letter.letter}</div>
+        <div key={letter.letter + letter.style } className='letter-navigation-item'>
+          <div className='letter-navigation-content'>{letter.letter}</div>
         </div>
       );
     });
@@ -90,8 +106,8 @@ class LetterNavigation extends Component {
 
   render() {
     return (
-      <div className='slide-navigation-container'>
-        <div ref='slidenavigationmobile' className='slide-navigation-mobile'>
+      <div className='letter-navigation-container'>
+        <div ref='slidenavigationmobile' className='letter-navigation'>
           {this.renderLetters(this.props.fontstyle.letters)}
         </div>
       </div>

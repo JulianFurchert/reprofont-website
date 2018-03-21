@@ -9,6 +9,7 @@
   color: black;
   overflow: hidden;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .card-body {
