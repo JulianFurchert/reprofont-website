@@ -14,9 +14,6 @@
   }
 }
 
-.overlay-enter .letter{
-  transform: scale(0.8);
-}
 
 .overlay-enter.overlay-entering .letter{
   transform: scale(1);
