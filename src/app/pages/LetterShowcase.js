@@ -24,9 +24,9 @@ class LetterShowcase extends Component {
     this.index = index;
   }
 
-  renderInformation({ name, activeLetterIndex, letters }) {
+  renderInformation({ name, index, letters }) {
     return (
-      <div className="information">Repro {name} - { ( '0' + (activeLetterIndex+1) ).slice(-2) }/{ letters.length }</div>
+      <div className="information">Repro {name} - { ( '0' + (index+1) ).slice(-2) }/{ letters.length }</div>
     )
   }
 
@@ -40,7 +40,7 @@ class LetterShowcase extends Component {
 
   render() {
     return (
-      <OverlayPage>
+      <OverlayPage style={this.props.style}>
         <div className="letter-showcase">
           <ButtonClose/>
           {this.renderInformation(this.props.fontstyle)}
@@ -50,7 +50,7 @@ class LetterShowcase extends Component {
             id={this.props.id}
             fontstyle={this.props.fontstyle}
           />
-          {this.renderBadge(this.props.fontstyle.letters[this.props.fontstyle.activeLetterIndex].style)}
+          {this.renderBadge(this.props.fontstyle.letters[this.props.fontstyle.index].style)}
           <LetterNavigation
             scrolledComponent={this.scrolledComponent}
             setScrolledComponent={this.setScrolledComponent.bind(this)}

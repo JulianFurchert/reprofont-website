@@ -10,13 +10,14 @@
   font-family: 'Fira Mono', monospace;
 }
 
-.fade-enter .letter-navigation-container{
+.overlay-enter .letter-navigation-container{
   transform: translateY(200px);
 }
 
-.fade-enter.fade-enter-active .letter-navigation-container{
+.overlay-enter.overlay-entering .letter-navigation-container{
   transform: translateY(0);
-  transition: 200ms;
+  transition-duration: 200ms;
+  transition-delay: 400ms;
 }
 
 .letter-navigation .flickity-slider{

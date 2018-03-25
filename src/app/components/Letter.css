@@ -14,6 +14,16 @@
   }
 }
 
+.overlay-enter .letter{
+  transform: scale(0.8);
+}
+
+.overlay-enter.overlay-entering .letter{
+  transform: scale(1);
+  transition-duration: 300ms;
+  transition-delay: 300ms;
+}
+
 .letter-card {
   margin-top: 24px;
   font-size: 280px;

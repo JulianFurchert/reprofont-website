@@ -33,6 +33,7 @@ class OverlayPage extends Component {
   render() {
     return (
       <Swipeable
+      style={this.props.style}
       ref="letterShowcase"
       className="overlay-page"
       onSwipingDown={this.swipingDown.bind(this)}

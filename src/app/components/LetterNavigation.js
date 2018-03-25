@@ -14,7 +14,7 @@ class LetterNavigation extends Component {
 
   componentDidMount() {
     this.flkty = new Flickity(this.refs.slidenavigationmobile, {
-      initialIndex: this.props.fontstyle.activeLetterIndex,
+      initialIndex: this.props.fontstyle.index,
       pageDots: false,
       prevNextButtons: false,
       freeScroll: true,
@@ -25,8 +25,8 @@ class LetterNavigation extends Component {
     });
 
     this.onScrolling = false;
-    this.scrollIndex = this.props.fontstyle.activeLetterIndex;
-    this.updateFocused(this.props.fontstyle.activeLetterIndex);
+    this.scrollIndex = this.props.fontstyle.index;
+    this.updateFocused(this.props.fontstyle.index);
 
     this.flkty.on( 'staticClick', (event, pointer, cellElement, cellIndex) => {
       if ( cellElement ) {
@@ -79,9 +79,14 @@ class LetterNavigation extends Component {
     if(nextProps.scrolledComponent === 'LetterSlideshow'){
       this.onScrolling = false;
       clearTimeout(this.scrollEnd);
-      this.flkty.select( nextProps.fontstyle.activeLetterIndex );
-      this.updateFocused( nextProps.fontstyle.activeLetterIndex );
+      this.flkty.select( nextProps.fontstyle.index );
+      this.updateFocused( nextProps.fontstyle.index );
     }
+  }
+
+  componentWillUnmount(){
+    this.onScrolling = false;
+    clearTimeout(this.scrollEnd);
   }
 
   renderBadge(style){

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Flickity from 'flickity';
+import { CSSTransition } from "react-transition-group";
 
 import { selectLetter } from "../../actions/index";
 import Letter from './Letter'
@@ -8,13 +9,23 @@ import './LetterSlideshow.css';
 
 class SlideshowMain extends Component {
 
-  shouldComponentUpdate(){
+  shouldComponentUpdate(nextProps, nextState){
+    if(nextState.show !== this.state.show){
+      return true
+    }
     return false;
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false
+    };
   }
 
   componentDidMount() {
     this.flkty = new Flickity(this.refs.slideshow, {
-      initialIndex: this.props.fontstyle.activeLetterIndex,
+      initialIndex: this.props.fontstyle.index,
       cellSelector: '.slideshow-item',
       pageDots: false,
       prevNextButtons: false
@@ -32,8 +43,8 @@ class SlideshowMain extends Component {
   componentWillReceiveProps(nextProps) {
     if(this.props.scrolledComponent !== 'LetterSlideshow'){
       console.log("componentWillReceiveProps");
-      if(this.flkty.selectedIndex !== nextProps.fontstyle.activeLetterIndex){
-        this.flkty.select( nextProps.fontstyle.activeLetterIndex, false, true );
+      if(this.flkty.selectedIndex !== nextProps.fontstyle.index){
+        this.flkty.select( nextProps.fontstyle.index, false, true );
       }
     }
   }
@@ -51,11 +62,23 @@ class SlideshowMain extends Component {
     });
   }
 
+  toggleShow(){
+    this.setState(prevState => ({
+      show: !prevState.show
+    }));
+  }
+
   render() {
     return (
-      <div ref='slideshow' className='slideshow'>
+      <CSSTransition
+        in={this.state.show}
+        timeout={8000}
+        classNames="test-"
+      >
+      <div onClick={this.toggleShow.bind(this)} ref='slideshow' className='slideshow'>
         {this.renderLetters(this.props.fontstyle.letters)}
       </div>
+      </CSSTransition>
     );
   }
 }

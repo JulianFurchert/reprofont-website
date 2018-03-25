@@ -15,3 +15,12 @@
   width: 100%;
   height: calc(100vh - 56px);
 }
+
+.overlay-enter .slideshow{
+  transform: translateY(0);
+}
+
+.overlay-enter.overlay-entering .slideshow{
+  transform: translateY(0);
+  transition-duration: 200ms;
+}
