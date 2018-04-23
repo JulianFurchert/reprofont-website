@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { selectLetter } from "../../actions/index";
-import { CSSTransition } from "react-transition-group";
 
 import Flickity from 'flickity';
 import './LetterNavigation.css';

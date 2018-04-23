@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Swipeable from 'react-swipeable'
-
 import './OverlayPage.css';
 
 class OverlayPage extends Component {
