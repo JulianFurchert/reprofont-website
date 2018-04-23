@@ -28,13 +28,6 @@ class LetterNavigation extends Component {
     this.scrollIndex = this.props.fontstyle.index;
     this.updateFocused(this.props.fontstyle.index);
 
-    this.flkty.on( 'staticClick', (event, pointer, cellElement, cellIndex) => {
-      if ( cellElement ) {
-        this.props.setScrolledComponent('LetterNavigation');
-        this.updateHistory( cellIndex );
-        this.updateFocused( cellIndex );
-      }
-    })
 
     this.flkty.on( 'dragStart', ()=> {
       this.props.setScrolledComponent('LetterNavigation');
