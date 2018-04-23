@@ -1,7 +1,7 @@
 .card {
   display: inline-block;
-  height: 380px;
-  flex: 0 0 100%;
+  height: 384px;
+  width: 100%;
   margin: 0;
   margin-bottom: 32px;
   padding: 0;
@@ -26,12 +26,12 @@
   padding-bottom: 12px;
   font-family: 'Fira Mono', monospace;
   border-bottom: 1px solid rgba(0,0,0,.125);
-  padding: 12px;
+  padding: 14px;
+  height: 48px;
 }
 
 @media (min-width: 576px) {
   .card  {
-    flex: 0 0 33%;
-    padding: 0 16px;
+    width: calc(33% - 16px);
   }
 }

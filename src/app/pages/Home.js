@@ -14,9 +14,11 @@ class Overview extends Component {
   componentDidMount() {
     window.scrollTo(0, this.props.scrollPosition);
   }
+
   componentWillUnmount(){
     this.props.saveScrollPosition(window.scrollY);
   }
+
   renderFontstyles() {
     return _.map(this.props.fontstyles, fontstyle => {
       return (
@@ -41,7 +43,7 @@ class Overview extends Component {
         </div>
         <div className="container fontstyles-overview">
           {this.renderFontstyles()}
-          <Card link="/download">
+          <Card information={'Download'}>
             <DownloadList />
           </Card>
         </div>

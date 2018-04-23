@@ -10,16 +10,32 @@ class Card extends Component {
     }
   }
 
-  render(){
+  renderCardWithLink(){
     return (
-        <Link className="card" id={this.props.id} to={this.props.link}>
-          <div className="card-body">
-            {this.renderInformation()}
-            {this.props.children}
-          </div>
-        </Link>
+      <Link className="card" id={this.props.id} to={this.props.link}>
+        <div className="card-body">
+          {this.renderInformation()}
+          {this.props.children}
+        </div>
+      </Link>
     )
   }
+
+  renderCard(){
+    return (
+      <div className="card" id={this.props.id}>
+        <div className="card-body">
+          {this.renderInformation()}
+          {this.props.children}
+        </div>
+      </div>
+    )
+  }
+
+  render(){
+    return this.props.link ? this.renderCardWithLink() : this.renderCard();
+  }
+
 }
 
 export default Card;

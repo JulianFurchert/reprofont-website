@@ -26,7 +26,7 @@
   text-align: center;
   border-radius: .25rem;
   color: #fff;
-  background-color: #6c757d;
+  background-color: #636365;
   z-index: 20;
 }
 
@@ -38,7 +38,7 @@
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #6c757d transparent transparent transparent;
+  border-color: #636365 transparent transparent transparent;
 }
 
 .badge.close{
