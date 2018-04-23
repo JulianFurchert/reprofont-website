@@ -6,8 +6,25 @@
   width: 32px;
   border-radius: 16px;
   line-height: 32px;
-  background-color: grey;
+  background-color: lightgray;
   z-index: 20;
+}
+
+.button-close:before, .button-close:after {
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  content: ' ';
+  height: 16px;
+  width: 2px;
+  background-color: #333;
+}
+
+.button-close:before {
+  transform: rotate(45deg);
+}
+.button-close:after {
+  transform: rotate(-45deg);
 }
 
 /*
