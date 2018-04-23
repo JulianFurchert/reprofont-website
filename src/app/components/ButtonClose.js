@@ -1,26 +1,9 @@
-import React, {Component} from 'react';
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { Link } from "react-router-dom";
 import './ButtonClose.css';
 
+const ButtonClose = () => (
+  <Link className="button-close" to="/"></Link>
+);
 
-
-class ButtonClose extends Component {
-
-  constructor(props) {
-    super(props);
-    this.buttonOnClick = this.buttonOnClick.bind(this);
-  }
-
-  buttonOnClick(){
-    this.props.history.push({
-      pathname: '/',
-      state: { animation: "overlay-close" }
-    })
-  }
-
-  render(){
-    return <div onClick={this.buttonOnClick} className="button-close" />
-  }
-}
-
-export default withRouter(ButtonClose);
+export default ButtonClose;
