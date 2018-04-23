@@ -12,7 +12,6 @@
   right: 12px;
   font-family: 'Fira Mono', monospace;
   color: black;
-  /* border-bottom: 1px solid rgba(0,0,0,.125); */
 }
 
 .badge {
@@ -31,17 +30,6 @@
   z-index: 20;
 }
 
-.badge.close{
-  opacity: 0;
-  transform: translateY(5px);
-}
-
-.badge.open{
-  opacity: 1;
-  transform: translateY(0);
-  transition: 200ms;
-}
-
 .badge:after {
   content: "";
   position: absolute;
@@ -51,4 +39,22 @@
   border-width: 5px;
   border-style: solid;
   border-color: #6c757d transparent transparent transparent;
+}
+
+.badge.close{
+  opacity: 0;
+}
+
+.badge.open{
+  opacity: 1;
+}
+
+.fade-enter .badge{
+  transform: translateY(200px);
+}
+
+.fade-enter.fade-enter-active .badge{
+  transform: translateY(0);
+  transition-duration: 300ms;
+  transition-delay: 100ms;
 }

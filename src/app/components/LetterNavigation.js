@@ -89,16 +89,6 @@ class LetterNavigation extends Component {
     clearTimeout(this.scrollEnd);
   }
 
-  renderBadge(style){
-    if(style !== 'default'){
-      return (
-        <div className="badge">
-          {style}
-        </div>
-      )
-    }
-  }
-
   renderLetters(letters) {
     return letters.map(letter => {
       return (

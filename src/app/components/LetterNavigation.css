@@ -16,8 +16,8 @@
 
 .fade-enter.fade-enter-active .letter-navigation-container{
   transform: translateY(0);
-  transition-duration: 200ms;
-  transition-delay: 200ms;
+  transition-duration: 300ms;
+  transition-delay: 100ms;
 }
 
 .letter-navigation .flickity-slider{
