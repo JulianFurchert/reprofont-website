@@ -21,6 +21,15 @@
   font-size: 16px;
 }
 
+.text-small a{
+  text-decoration: none;
+  color: white;
+}
+
+.text-small a:hover{
+  color:#636365;
+}
+
 .fontstyles-overview {
   display: flex;
   flex-direction: row;
