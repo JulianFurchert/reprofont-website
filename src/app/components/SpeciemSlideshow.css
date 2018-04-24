@@ -9,6 +9,7 @@
 }
 
 .slideshow-img {
+  position: relative;
   margin: auto;
   max-height: 90%;
   max-width: 90%;

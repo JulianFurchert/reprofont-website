@@ -5,6 +5,7 @@ import Flickity from 'flickity';
 import { selectPage } from "../../actions/index";
 import './SpeciemSlideshow.css';
 
+import aspectRatioPlaceholder from '../../img/aspectRatioPlaceholder.jpg';
 import img256 from '../../img/speciem/256';
 import img768 from '../../img/speciem/768';
 import img1280 from '../../img/speciem/1280';
@@ -43,15 +44,13 @@ class SlideshowMain extends Component {
     return img1920.map( (img,index) =>{
       return (
         <div key={index} className='slideshow-item'>
-          {/* <div className="aspect-ratio-placeholder"> */}
-            <img
-              className="slideshow-img"
-              alt={`Repro Speciem Page ${index}`}
-              src={img256[index]}
-              data-flickity-lazyload={img1280[index]}
-              data-flickity-lazyload-srcset={`${img1920[index]} 1920w, ${img1280[index]} 1280w, ${img768[index]} 768w, ${img256[index]} 256w`}
-            />
-          {/* </div> */}
+          <img
+            className="slideshow-img"
+            alt={`Repro Speciem Page ${index}`}
+            src={aspectRatioPlaceholder}
+            data-flickity-lazyload={img1280[index]}
+            data-flickity-lazyload-srcset={`${img1920[index]} 1920w, ${img1280[index]} 1280w, ${img768[index]} 768w, ${img256[index]} 256w`}
+          />
         </div>
       );
     });
