@@ -28,7 +28,8 @@ class SlideshowMain extends Component {
       initialIndex: this.props.fontstyle.index,
       cellSelector: '.slideshow-item',
       pageDots: false,
-      prevNextButtons: false
+      prevNextButtons: false,
+      accessibility: false
     });
 
     this.flkty.on('dragStart', ()=>{

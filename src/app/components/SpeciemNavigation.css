@@ -11,8 +11,14 @@
   font-family: 'Fira Mono', monospace;
 }
 
-.slide-navigation-mobile .flickity-slider{
-  cursor: default;
+.fade-enter .slide-navigation-container{
+  transform: translateY(200px);
+}
+
+.fade-enter.fade-enter-active .slide-navigation-container{
+  transform: translateY(0);
+  transition-duration: 300ms;
+  transition-delay: 100ms;
 }
 
 .speciem-navigation-item {
@@ -22,7 +28,6 @@
   height: 40px;
   margin-right: 4px;
   border-radius: 0;
-  cursor: pointer;
   color: grey;
 }
 

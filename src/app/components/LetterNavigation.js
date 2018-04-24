@@ -20,7 +20,8 @@ class LetterNavigation extends Component {
       freeScrollFriction: 0.1,
       // selectedAttraction: 0.01,
       // friction: 0.13,
-      contain: false
+      contain: false,
+      accessibility: false
     });
 
     this.onScrolling = false;

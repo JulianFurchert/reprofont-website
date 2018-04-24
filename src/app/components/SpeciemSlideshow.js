@@ -20,23 +20,25 @@ class SlideshowMain extends Component {
 
   componentDidMount() {
     this.flkty = new Flickity(this.refs.slideshow, {
-      initialIndex: this.props.speciem.activePage,
+      initialIndex: this.props.index,
       cellSelector: '.slideshow-item',
       pageDots: false,
       prevNextButtons: false,
       lazyLoad: 3,
       selectedAttraction: 0.04,
       friction: 0.3,
+      accessibility: false,
     });
 
     this.flkty.on('dragEnd', ()=>{
-      this.props.selectPage(this.flkty.selectedIndex)
+      this.props.setIndex(this.flkty.selectedIndex)
     });
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.flkty.selectedIndex !== parseInt(nextProps.speciem.activePage,10)){
-      this.flkty.select( nextProps.speciem.activePage, false, true );
+    console.log(this.flkty.selectedIndex + " " + nextProps.index);
+    if(this.flkty.selectedIndex !== nextProps.index){
+      this.flkty.select( nextProps.index, false, true );
     }
   }
 
