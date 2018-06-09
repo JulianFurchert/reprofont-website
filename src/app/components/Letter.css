@@ -7,12 +7,23 @@
   line-height: 0.8;
 }
 
+
 @media (min-width: 576px) {
   .letter {
     font-size: 60vh;
     max-height: 55vh;
   }
+
+  .fade-enter .slideshow-item .letter{
+    font-size: 50vh;
+  }
+
+  .fade-enter.fade-enter-active .slideshow-item .letter{
+    font-size: 60vh;
+    transition-duration: 300ms;
+  }
 }
+
 
 .letter-card {
   margin-top: 24px;

@@ -14,3 +14,13 @@
   max-height: 90%;
   max-width: 90%;
 }
+
+
+.fade-enter .slideshow-img{
+  transform: scale(0.2);
+}
+
+.fade-enter.fade-enter-active .slideshow-img{
+  transform: scale(1);
+  transition-duration: 300ms;
+}
