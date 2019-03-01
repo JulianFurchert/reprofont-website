@@ -32,6 +32,11 @@ class SlideshowMain extends Component {
       accessibility: false
     });
 
+    // setTimeout(() => {
+    //   this.nextLetter.bind(this);
+    //   setInterval(this.nextLetter.bind(this), 3000);
+    // }, 3000);
+
     this.flkty.on('dragStart', ()=>{
       this.props.setScrolledComponent('LetterSlideshow');
     });
@@ -39,7 +44,24 @@ class SlideshowMain extends Component {
     this.flkty.on('dragEnd', ()=>{
       this.props.selectLetter(this.props.id,this.flkty.selectedIndex)
     });
+
+    this.flkty.on('change', ()=>{
+      this.props.selectLetter(this.props.id,this.flkty.selectedIndex)
+    });
   }
+
+  // nextLetter(){
+  //   if(this.flkty){
+  //     if(this.flkty.selectedIndex === 20){
+  //       this.props.setScrolledComponent('LetterSlideshow');
+  //       this.flkty.select(0);
+  //     }
+  //     else{
+  //       this.props.setScrolledComponent('LetterSlideshow');
+  //       this.flkty.next();
+  //     }
+  //   }
+  // }
 
   componentWillReceiveProps(nextProps) {
     if(this.props.scrolledComponent !== 'LetterSlideshow'){

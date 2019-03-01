@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animated-scroll-to": "^1.2.2",
     "animejs": "^2.2.0",
     "flickity": "^2.0.11",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-fastclick": "^3.0.2",
+    "react-pose": "^4.0.5",
     "react-redux": "^5.0.7",
     "react-responsive": "^4.0.4",
     "react-router-dom": "^4.2.2",

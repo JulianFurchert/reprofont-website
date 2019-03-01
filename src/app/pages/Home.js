@@ -1,5 +1,6 @@
 import _ from "lodash";
 import React, { Component } from 'react';
+import animateScrollTo from 'animated-scroll-to';
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom'
 import { saveScrollPosition } from "../../actions/index";
@@ -9,10 +10,28 @@ import Letter from '../components/Letter'
 import Card from '../components/Card'
 import DownloadList from '../components/DownloadList'
 
+const options = {
+  speed: 6000
+
+};
+
 class Overview extends Component {
 
   componentDidMount() {
     window.scrollTo(0, this.props.scrollPosition);
+
+    setTimeout(() => {
+      animateScrollTo(250, options);
+    }, 3000);
+
+    setTimeout(() => {
+      animateScrollTo(800, options);
+    }, 5000);
+
+    setTimeout(() => {
+      animateScrollTo(0, options);
+    }, 8000);
+
   }
 
   componentWillUnmount(){
