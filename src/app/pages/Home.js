@@ -10,29 +10,29 @@ import Letter from '../components/Letter'
 import Card from '../components/Card'
 import DownloadList from '../components/DownloadList'
 
-const options = {
-  speed: 6000
+// const options = {
+//   speed: 6000
 
-};
+// };
 
 class Overview extends Component {
 
-  componentDidMount() {
-    window.scrollTo(0, this.props.scrollPosition);
+  // componentDidMount() {
+  //   window.scrollTo(0, this.props.scrollPosition);
 
-    setTimeout(() => {
-      animateScrollTo(250, options);
-    }, 3000);
+  //   setTimeout(() => {
+  //     animateScrollTo(250, options);
+  //   }, 3000);
 
-    setTimeout(() => {
-      animateScrollTo(800, options);
-    }, 5000);
+  //   setTimeout(() => {
+  //     animateScrollTo(800, options);
+  //   }, 5000);
 
-    setTimeout(() => {
-      animateScrollTo(0, options);
-    }, 8000);
+  //   setTimeout(() => {
+  //     animateScrollTo(0, options);
+  //   }, 8000);
 
-  }
+  // }
 
   componentWillUnmount(){
     this.props.saveScrollPosition(window.scrollY);
