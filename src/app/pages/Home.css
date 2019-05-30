@@ -13,7 +13,7 @@
   hyphens: auto;
   color: white;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .text-small{
@@ -40,7 +40,7 @@
 
 @media (min-width: 576px) {
   .text {
-    font-size: 24px;
+    font-size: 21px;
   }
   .text-small {
     font-size: 16px;
@@ -48,14 +48,20 @@
 }
 
 @media (min-width: 768px){
-  .about  {
-    font-size: 32px;
-  }
   .container {
     padding: 24px;
   }
   .container:after{
     content: "";
     width: calc(33% - 16px);
+  }
+}
+
+@media (min-width: 1281px) {
+  .text {
+    font-size: 24px;
+  }
+  .text-small {
+    font-size: 21px;
   }
 }
