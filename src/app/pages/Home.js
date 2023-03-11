@@ -34,7 +34,7 @@ class Overview extends Component {
         <div className="container">
           <div className="about">
             <h1 className="text">
-              The Repro typeface consists of six weights, all generated using an algorithm. The idea for the project and the algorithm was born while working in Cinema4D, where text paths and splines are recalculated for export. There are several interpolation methods available that influence the appearance of the exported glyphs. This inspired me to develop my own method for recalculating glyphs, which creates intermediate points along the paths and moves them onto a virtual orthogonal grid. Repro Null serves as the base for the other font weights. The grid becomes coarser from weight to weight until the resulting characters are no longer legible.           
+              The Repro typeface is made up of seven weights, of which five were created using an algorithm. The idea for the project was born while working in Cinema4D, where text paths and splines are recalculated for export. There are several interpolation methods available that influence the appearance of the exported glyphs. This inspired me to develop my own method for recalculating glyphs. The method creates intermediate points along the paths and moves them onto a virtual orthogonal grid. Repro Null serves as the base for the other font weights. The grid becomes coarser from weight to weight until the resulting characters are no longer readable.
             </h1>
             <p className="text text-small">
               <Link to="/speciem">Speciem</Link>, <a href="https://github.com/JulianFurchert/reprofont/blob/master/LICENSE.md">License</a>, <a href="https://github.com/JulianFurchert/reprofont">Source</a>
