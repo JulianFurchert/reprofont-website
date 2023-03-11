@@ -34,7 +34,8 @@ class Overview extends Component {
         <div className="container">
           <div className="about">
             <h1 className="text">
-              Die Idee zu der Schriftfamilie Repro entstand in Cinema4D. In Cinema werden Textpfade und Splines bei der Weiterverarbeitung in Geraden unterteilt. Zur Berechnung der Zwischenpunkte stehen dafür unterschiedliche Interpolationsmethoden zu Verfügung. Das heißt, die Form eines Buchstaben wird neben der Auswahl der Schrift auch von der Auswahl und Einstellungen der Interpolationsmethode bestimmt. Dieser Umstand inspirierte mich dazu ein eigene Methode zur Neuberechnung der Glyphen zu schreiben. Die Methode erzeugt Zwischenpunkte entlang der Pfade und verschiebt diese auf ein virtuelles orthogonales Raster. Als Ausgangsform dienen die Glyphen der Repro 100. Das Raster wird von Schriftschnitt zu Schriftschnitt (Repro 200-600) immer gröber, bis die daraus resultieren Zeichen nicht mehr lesbar sind.            </h1>
+              The Repro typeface consists of six weights, all generated using an algorithm. The idea for the project and the algorithm was born while working in Cinema4D, where text paths and splines are recalculated for export. There are several interpolation methods available that influence the appearance of the exported glyphs. This inspired me to develop my own method for recalculating glyphs, which creates intermediate points along the paths and moves them onto a virtual orthogonal grid. Repro Null serves as the base for the other font weights. The grid becomes coarser from weight to weight until the resulting characters are no longer legible.           
+            </h1>
             <p className="text text-small">
               <Link to="/speciem">Speciem</Link>, <a href="https://github.com/JulianFurchert/reprofont/blob/master/LICENSE.md">License</a>, <a href="https://github.com/JulianFurchert/reprofont">Source</a>
             </p>
